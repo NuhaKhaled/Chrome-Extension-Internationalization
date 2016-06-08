@@ -62,7 +62,7 @@ newtab.js sets h1 with id="title" with "Hello" world dynamically on load. Settin
 
 ``` js
 function setTitle() {
-  document.getElementById("title").innerHTML = "Hello!";
+  document.getElementById('title').innerHTML = 'Hello!';
 }
 
 window.addEventListener('load', setTitle);
@@ -149,7 +149,7 @@ You need to update newtab.js, so the value of the header would be chrome.i18n.ge
 
 ``` js
 function setTitle() {
-  document.getElementById("title").innerHTML = chrome.i18n.getMessage("appTitle");
+  document.getElementById('title').innerHTML = chrome.i18n.getMessage('appTitle');
 }
 
 window.addEventListener('load', setTitle);
