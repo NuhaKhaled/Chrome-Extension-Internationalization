@@ -175,7 +175,7 @@ Note: You can't use this message in a manifest file.
 @@bidi_start_edge   If the @@bidi_dir is "ltr", then this is "left"; otherwise, it's "right".
 @@bidi_end_edge If the @@bidi_dir is "ltr", then this is "right"; otherwise, it's "left".
 
-To change css direction to rtl, we need @@bidi_dir. So let's update css to add:
+To change CSS direction to rtl, we need @@bidi_dir. So let's update CSS to add:
 direction: __MSG_@@bidi_dir__;
 
 style.css:
