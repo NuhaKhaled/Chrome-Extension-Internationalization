@@ -31,7 +31,7 @@ The manifest would just set extension's name, description, version and manifest 
 }
 ```
 
-The newtab.html is the HTML page that overrides Chrome's new tab page. In this demo, you just need to have the header h1 for "Hello" word.
+The `newtab.html` is the HTML page that overrides Chrome's new tab page. In this demo, you just need to have the header `h1` for "Hello" word.
 
 ``` html
 <!DOCTYPE HTML>
@@ -47,7 +47,7 @@ The newtab.html is the HTML page that overrides Chrome's new tab page. In this d
 </html>
 ```
 
-style.css is a simple Stylesheet used to style the header:
+`style.css` is a simple Stylesheet used to style the header:
 
 ``` css
 #title {
@@ -58,7 +58,7 @@ style.css is a simple Stylesheet used to style the header:
 }
 ```
 
-newtab.js sets h1 with id="title" with "Hello" world dynamically on load. Setting the header dynamically would help in changing it easier in future.
+`newtab.js` sets `h1` with `id="title"` with "Hello" world dynamically on load. Setting the header dynamically would help in changing it easier in future.
 
 ``` js
 function setTitle() {
@@ -68,7 +68,7 @@ function setTitle() {
 window.addEventListener('load', setTitle);
 ```
 
-That's it, we are done with the ground work. In order to test it, go to "chrome://extensions/", then enable developer mode. Load unpacked extension button will appear. Click on this button, and choose your extension's path.
+That's it, we are done with the ground work. In order to test it, go to `chrome://extensions/`, then enable developer mode. Load unpacked extension button will appear. Click on this button, and choose your extension's path.
 
 ![extensions](https://cloud.githubusercontent.com/assets/626005/15888802/1b365fbe-2d71-11e6-8a92-baa1690ccb4b.png)
 
@@ -78,13 +78,13 @@ Whatever what was your browser's language, the extension's title, and descriptio
 
 ## Internationalizing The Extension
 
-The extension initially supported just one locale "en". Chrome Platform API gives the chance to internationalize even the title in very few steps. So let's upgrade the extension to be able to say Hello in all languages, based on user's language. First, you need to decide languages/regions the extension will support. Every language/region got a [Locale code](https://developer.chrome.com/webstore/i18n#localeTable). For this demo, I will support English ("en") and Arabic ("ar").
+The extension initially supported just one locale `en`. Chrome Platform API gives the chance to internationalize even the title in very few steps. So let's upgrade the extension to be able to say Hello in all languages, based on user's language. First, you need to decide languages/regions the extension will support. Every language/region got a [Locale code](https://developer.chrome.com/webstore/i18n#localeTable). For this demo, I will support English ("en") and Arabic ("ar").
 
 ![helloextension](https://cloud.githubusercontent.com/assets/626005/15888805/1b472c18-2d71-11e6-992b-e335ad7e7230.png)
 
-To localize the extension, you modify manifest.json and provide a _locales directory in your app's main directory. You provide your extension with _locales/locale/messages.json file for each chosen locale. Here's the file hierarchy for the extension that supports English ("en") and Arabic ("ar").
+To localize the extension, you modify `manifest.json` and provide a *_locales* directory in your app's main directory. You provide your extension with `_locales/locale/messages.json` file for each chosen locale. Here's the file hierarchy for the extension that supports English `en` and Arabic `ar`.
 
-messages.json contains all the user-visible needed for localization.  You name each user-visible string and put it into the messages.json file. Each name would include a message, the translated string and a description (optional) that describes it for developer's documentation. In this demo, we just need to localize the title ("appTitle") and description ("appDesc").
+`messages.json` contains all the user-visible needed for localization.  You name each user-visible string and put it into the messages.json file. Each name would include a message, the translated string and a description (optional) that describes it for developer's documentation. In this demo, we just need to localize the title `appTitle` and description `appDesc`.
 
 `_locales/en/messages.json`
 
@@ -114,7 +114,7 @@ messages.json contains all the user-visible needed for localization.  You name e
 }
 ```
 
-If an extension has a _locales directory, the [manifest](https://developer.chrome.com/extensions/manifest) must define "default_locale". Add to the manifest "default_locale" : "en". The extension's manifest, CSS files, and JavaScript code use each string's name to get its localized version.  __MSG_messagename__ is used to refer to any message defined in the supported locales. To localize app listing, you need to change name and description in manifest to use __MSG_appTitle__ and __MSG_appDesc__.
+If an extension has a _locales directory, the [manifest](https://developer.chrome.com/extensions/manifest) must define `default_locale`. Add to the manifest `"default_locale" : "en"`. The extension's manifest, CSS files, and JavaScript code use each string's name to get its localized version.  `__MSG_messagename__` is used to refer to any message defined in the supported locales. To localize app listing, you need to change name and description in manifest to use `__MSG_appTitle__` and `__MSG_appDesc__`.
 
 The manifest after the edits:
 
@@ -145,7 +145,7 @@ Now, It is time to change the "Hello" in the new tab. Chrome API provides this J
 
 `chrome.i18n.getMessage("messagename")`
 
-You need to update newtab.js, so the value of the header would be chrome.i18n.getMessage("appTitle"). newtab.js updated:
+You need to update `newtab.js`, so the value of the header would be `chrome.i18n.getMessage("appTitle")`, newtab.js updated:
 
 ``` js
 function setTitle() {
@@ -175,10 +175,10 @@ Note: You can't use this message in a manifest file.
 @@bidi_start_edge   If the @@bidi_dir is "ltr", then this is "left"; otherwise, it's "right".
 @@bidi_end_edge If the @@bidi_dir is "ltr", then this is "right"; otherwise, it's "left".
 
-To change CSS direction to rtl, we need @@bidi_dir. So let's update CSS to add:
-direction: __MSG_@@bidi_dir__;
+To change CSS direction to rtl, we need `@@bidi_dir`. So let's update CSS to add:
+direction: `__MSG_@@bidi_dir__`;
 
-style.css:
+`style.css`
 
 ``` css
 #title {
