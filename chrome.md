@@ -2,9 +2,9 @@
 
 Around 70% of Internet users use Chrome today. Chrome is not just for browse ring, It is open, extendable and mobile. It's a great chance for developers to innovate and extend Chrome functionalities using all Chrome platform APIs facilities. The Chrome web store is full of great apps and extensions that could reach million of users and give a service that wasn't possible by other development platforms.
 
-This article assumes you already worked with Chrome Apps/Extensions. Understanding how open is Chrome web store to big variety of people, Internationalizing becomes a must. It make it easy to adapt to various languages and regions. Chrome provides the developer with simple structure to internationalize his app/extension in few seconds.
+This article assumes you already worked with Chrome Apps/Extensions. Understanding how open is Chrome web store to a big variety of people, Internationalizing becomes a must. It makes it easy to adapt to various languages and regions. Chrome provides the developer with a simple structure to internationalize his app/extension in few seconds.
 
-This article will cover Chrome App/Extension i18n using a simple demo.  In order to test your browser in multiple language, you need to set your [browser locale](https://developer.chrome.com/extensions/i18n#locales-testing).
+This article will cover Chrome App/Extension i18n using a simple demo.  In order to test your browser in multiple languages, you need to set your [browser locale](https://developer.chrome.com/extensions/i18n#locales-testing).
 
 
 The source code is available on [GitHub](https://github.com/NuhaKhaled/Hello)
@@ -14,7 +14,7 @@ For today's purpose, let's create a simple Chrome extension called Hello (in Eng
 
 ![newtab](https://cloud.githubusercontent.com/assets/626005/15888808/1b586816-2d71-11e6-9d57-63022aaf4b4d.png)
 
-Create a new folder with the extension known essential files. For this step, we need a manifest, new tab HTML and CSS files and image for icon.
+Create a new folder with the extension known essential files. For this step, we need a manifest, new tab HTML and CSS files and image for the icon.
 
 ![structure](https://cloud.githubusercontent.com/assets/626005/15888810/1b738c54-2d71-11e6-8f44-5097217bc556.png)
 
@@ -30,7 +30,7 @@ The manifest would just set extension's name, description, version and manifest 
    }
 }
 
-The newtab.html is the html page that overrides Chrome's new tab page. In this demo, you just need to have the header h1 for "Hello" word.
+The newtab.html is the HTML page that overrides Chrome's new tab page. In this demo, you just need to have the header h1 for "Hello" word.
 
 <!DOCTYPE HTML>
 <html>
@@ -69,7 +69,7 @@ That's it, we are done with the ground work. In order to test it, go to "chrome:
 
 ![testarabic](https://cloud.githubusercontent.com/assets/626005/15888811/1b889888-2d71-11e6-90c1-4d4afc06d491.png)
 
-Whatever what was your browser's language, the extension's title and description will appear as in the same way it was set in the manifest. 
+Whatever what was your browser's language, the extension's title, and description will appear as in the same way it was set in the manifest. 
 
 Internationalizing The Extension
 
@@ -153,7 +153,7 @@ Chrome with Arabic locale:
 
 ![arabic](https://cloud.githubusercontent.com/assets/626005/15888800/1b0c7adc-2d71-11e6-9c2d-07593dff395a.png)
 
-On last issue, Arabic is right to left language so the exclamation mark should be in the left! chrome API provide you with predefined messages that would help in internationalization. 
+On the last issue, Arabic is right to left language so the exclamation mark should be on the left! chrome API provide you with predefined messages that would help in internationalization. 
 
 @@extension_id  The extension or app ID; you might use this string to construct URLs for resources inside the extension. Even unlocalized extensions can use this message. 
 Note: You can't use this message in a manifest file.
