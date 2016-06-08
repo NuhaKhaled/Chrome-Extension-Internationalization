@@ -76,7 +76,7 @@ That's it, we are done with the ground work. In order to test it, go to `chrome:
 
 Whatever what was your browser's language, the extension's title, and description will appear as in the same way it was set in the manifest. 
 
-## Internationalizing The Extension
+## Internationalizing the Extension
 
 The extension initially supported just one locale `en`. Chrome Platform API gives the chance to internationalize even the title in very few steps. So let's upgrade the extension to be able to say Hello in all languages, based on user's language. First, you need to decide languages/regions the extension will support. Every language/region got a [Locale code](https://developer.chrome.com/webstore/i18n#localeTable). For this demo, I will support English ("en") and Arabic ("ar").
 
@@ -190,7 +190,7 @@ direction: `__MSG_@@bidi_dir__`;
 }
 ```
 
-So now it is fixed,Chrome with Arabic locale:
+So now it is fixed, Chrome with Arabic locale:
 
 ![perfect](https://cloud.githubusercontent.com/assets/626005/15888809/1b649384-2d71-11e6-95d0-87fd6af574ac.png)
 
